@@ -37,7 +37,7 @@ async function start() {
   mongoose.set('useCreateIndex', true);
   mongoose.set('useUnifiedTopology', true);
 
-  const User = require('../models/user')
+  const User = require('./models/user')
 
   dotenv.config()
 
@@ -61,15 +61,15 @@ async function start() {
 
 
   // require APIs
-  const productRoutes = require('../routes/product')
-  const categoryRoutes = require('../routes/category')
-  const ownerRoutes = require('../routes/owner')
-  const userRoutes = require('../routes/auth')
-  const reviewRoutes = require('../routes/review')
-  const addressRoutes = require('../routes/address')
-  const paymentRoutes = require('../routes/payment')
-  const orderRoutes = require('../routes/order')
-  const searchRoutes = require('../routes/search')
+  const productRoutes = require('./routes/product')
+  const categoryRoutes = require('./routes/category')
+  const ownerRoutes = require('./routes/owner')
+  const userRoutes = require('./routes/auth')
+  const reviewRoutes = require('./routes/review')
+  const addressRoutes = require('./routes/address')
+  const paymentRoutes = require('./routes/payment')
+  const orderRoutes = require('./routes/order')
+  const searchRoutes = require('./routes/search')
 
   app.use(productRoutes)
   app.use(categoryRoutes)

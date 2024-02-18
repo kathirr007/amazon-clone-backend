@@ -1,7 +1,7 @@
 const express = require('express');
 const config = require('../nuxt.config.js')
 const { Nuxt, Builder } = require('nuxt')
-const {handler, path} = require('./index.js')
+const {handler, path} = require('./api/index.js')
 
 // dotenv.config()
 

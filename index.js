@@ -6,7 +6,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
-const apiUrl = process.env.BASE_URL || 'http://localhost:3010'
+const apiUrl = process.env.NODE_ENV === 'production' ? `${process.env.BASE_URL}` : 'http://localhost:3010'
 
 async function start() {
   // Init Nuxt.js
@@ -80,6 +80,10 @@ async function start() {
   app.use(paymentRoutes)
   app.use(orderRoutes)
   app.use(searchRoutes)
+
+  app.get('/', (req, res) => {
+    res.send('Welcome to amazon clone backend api!')
+  })
 
   // Routers registeration
   // app.use('', apiRoutes);
